@@ -1,0 +1,11 @@
+{
+    "liveServer.settings.port": 5501,
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "browser-extension/manifest.json"
+            ],
+            "url": "https://json.schemastore.org/chrome-manifest"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "name": "Biosignals with Online Videos",
+    "description": "CHI2023!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "minimum_chrome_version": "95",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "nativeMessaging",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*.youtube.com/*",
+        "https://*.bilibili.com/*",
+        "https://127.0.0.1:3000/*",
+        "http://127.0.0.1:3000/*"
+    ],
+    "action": {
+        "default_popup": "popup/index.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*",
+                "https://*.bilibili.com/*"
+            ],
+            "js": [
+                "contentScripts/vendor/anime.min.js",
+                "contentScripts/contentScript.js"
+            ],
+            "css": [
+                "contentScripts/contentScript.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["data/*"],
+            "matches": [
+                "https://*.youtube.com/*",
+                "https://*.bilibili.com/*"
+            ]
+        },
+        {
+            "resources": ["pageScripts/bilibili.js"],
+            "matches": ["https://*.bilibili.com/*"]
+        }
+    ]
+}

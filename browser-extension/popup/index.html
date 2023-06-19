@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Biosignal Video Browser Extension</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css@0.5.9/dist/spectre-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <main class="container grid-lg">
+    <!-- <p id="sensor-status">
+      Sensor status: <span>off</span>
+    </p> -->
+    <div id="controls" class="columns">
+      <div class="column col-12">
+        <button id="btn-init" type="button" class="btn">Initialize Video Hooks</button>
+      </div>
+      <div class="column">
+        <select id="select-vis" class="form-select" autocomplete="off">
+          <option value="" disabled selected hidden>Feedback</option>
+          <option value="lighting">Ambient Light</option>
+          <option value="thermometer">Icon</option>
+          <!-- <option value="exclamation">Exclamation</option> -->
+          <option value="vibration">Vibration</option>
+        </select>
+      </div>
+      <div class="column col-auto">
+        <select id="select-video-id" class="form-select" autocomplete="off">
+          <option value="" disabled selected hidden>videoID</option>
+          <option value="1">Unravel</option>
+          <!-- <option value="2">2</option> -->
+          <option value="3">Marvel/DC</option>
+          <option value="4">Interstellar</option>
+          <option value="5">Mayday/GEM</option>
+        </select>
+      </div>
+      <div class="column col-auto">
+        <button id="btn-vis" type="button" class="btn"><i class="icon icon-check"></i></button>
+      </div>
+      <div class="column col-12">
+        <div class="columns">
+          <div class="column">
+            Current: <span id="vis-current">None</span>
+          </div>
+          <div class="column col-auto">
+            <button id="btn-vis-stop" type="button" class="btn"><i class="icon icon-stop"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="error-log-container">
+      <hr>
+      <p>Error Log:</p>
+      <pre><code id="error-log"></code></pre>
+      <hr>
+    </div>
+  </main>
+</body>
+
+</html>

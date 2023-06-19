@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Biosignal Video Admin Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.unpkg.com/chart.js@4.3.0/dist/chart.umd.js"></script>
+  <script src="https://www.unpkg.com/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+  <script src="https://unpkg.com/mqtt@4.3.7/dist/mqtt.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <h1 class="text-center">Biosignal Video Admin Page</h1>
+  <main class="container grid-lg">
+    <article>
+      <div id="controls" class="columns">
+        <div class="column col-auto">
+          <button id="btn-sensors" type="button" class="btn" data-on="false" disabled>Bring Up Sensors</button>
+        </div>
+        <div class="column col-auto">
+          <button id="btn-sensors-off" type="button" class="btn">Force take down sensors</button>
+        </div>
+        <div class="column col-auto">
+          <button id="btn-mqtt" type="button" class="btn">Connect to sensor data MQTT</button>
+        </div>
+      </div>
+      <form class="columns" id="form-id" autocomplete="off">
+        <div class="column col-auto col-sm-12">
+          <select class="form-select" name="uesrIDPrefix" autocomplete="off">
+            <option value="">Prefix</option>
+            <option value="A" selected>A</option>
+            <option value="B">B</option>
+            <option value="U">U</option>
+          </select>
+        </div>
+        <div class="column col-2 col-sm-12 has-icon-left">
+          <input type="text" class="form-input" placeholder="userID" name="userID">
+          <i class="form-icon icon icon-people"></i>
+        </div>
+        <div class="column col-2 col-sm-12 has-icon-left">
+          <select class="form-select" name="videoID" autocomplete="off">
+            <option value="" disabled selected hidden>videoID</option>
+            <option value="1">Unravel</option>
+            <!-- <option value="2">2</option> -->
+            <option value="3">Marvel/DC</option>
+            <option value="4">Interstellar</option>
+            <option value="5">Mayday/GEM</option>
+          </select>
+          <!-- <input type="text" class="form-input" placeholder="videoID" name="videoID">
+          <i class="form-icon icon icon-photo"></i> -->
+        </div>
+        <button class="column col-auto col-sm-12 btn btn-primary" id="btn-submit-id" type="submit">Submit</button>
+      </form>
+    </article>
+    <article class="columns">
+      <div class="column col-4">
+        <canvas id="canvas-plot-gsr"></canvas>
+      </div>
+      <div class="column col-4">
+        <canvas id="canvas-plot-hr"></canvas>
+      </div>
+      <div class="column col-4">
+        <canvas id="canvas-plot-emg"></canvas>
+      </div>
+    </article>
+    <article id="error-log-container">
+      <hr>
+      <p>Error Log:</p>
+      <pre><code id="error-log"></code></pre>
+      <hr>
+    </article>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "webextensions": true
+    },
+    "globals": {
+        "anime": "readonly",
+        "p5": "readonly",
+        "Chart": "readonly",
+        "mqtt": "readonly"
+    },
+    "extends": [
+        "eslint:recommended",
+        "p5js"
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-unused-vars": [
+            "warn",
+            {
+                "varsIgnorePattern": "setup|draw|preload|mousePressed|keyPressed"
+            }
+        ]
+    },
+    "root": true
+}

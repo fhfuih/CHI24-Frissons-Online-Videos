@@ -1,0 +1,31 @@
+.hci-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.hci-thermometer {
+    width: 6%;
+    height: auto;
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+}
+
+.hci-video {
+    position: fixed;
+    top: 50%;
+    left: 10vw;
+    width: 80vw;
+    z-index: 999;
+    transform: translate(0, -50%);
+}
+
+.bpx-player-video-area {
+    z-index: 99;
+}

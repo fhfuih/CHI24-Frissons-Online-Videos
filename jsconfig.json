@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"typeRoots": [
+			"./node_modules/@types",
+			"./node_modules/chrome-types",
+			"./types.d.ts"
+		]
+	},
+	"exclude": [
+		"node_modules",
+	]
+}
